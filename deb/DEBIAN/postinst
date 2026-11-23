@@ -1,6 +1,5 @@
 #!/bin/sh
 set -e
 chmod 755 /Library/MobileSubstrate/DynamicLibraries/GroupReadReceipt.dylib 2>/dev/null || true
-chmod 755 /Library/MobileSubstrate/DynamicLibraries/GRRShell.dylib 2>/dev/null || true
 mkdir -p "/Library/Application Support/GroupReadReceipt"
 exit 0
