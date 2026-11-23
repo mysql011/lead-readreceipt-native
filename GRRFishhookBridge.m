@@ -10,7 +10,7 @@
 
 static void (*GRROriginalNSLog)(NSString *format, ...) = NULL;
 
-static void GRRHookedNSLog(NSString *format, ...) {
+__attribute__((unused)) static void GRRHookedNSLog(NSString *format, ...) {
     va_list arguments;
     va_start(arguments, format);
     NSString *message = format ? [[NSString alloc] initWithFormat:format arguments:arguments] : @"";
