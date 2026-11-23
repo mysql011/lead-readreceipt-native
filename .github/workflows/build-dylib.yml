@@ -1,32 +1,26 @@
 name: Build Lead ReadReceipt dylib
-
 on:
   workflow_dispatch:
   push:
     branches: [main, master]
-
 jobs:
   build:
     runs-on: macos-14
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
       - name: Install toolchain
         run: |
           brew install dpkg ldid
           git clone --recursive https://github.com/theos/theos.git "$HOME/theos"
-
       - name: Build dylib and deb
         run: |
           export THEOS="$HOME/theos"
           chmod +x build.sh
           bash build.sh
-
       - name: Upload deb
         uses: actions/upload-artifact@v4
         with:
           name: com.group.readreceipt
           path: packages/*.deb
           if-no-files-found: error
-        retention-days: 30
