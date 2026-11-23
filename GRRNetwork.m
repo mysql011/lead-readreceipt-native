@@ -2,6 +2,7 @@
 #import "GRRSettings.h"
 #import "GRRStorage.h"
 #import <SystemConfiguration/SystemConfiguration.h>
+#import <netinet/in.h>
 
 @interface GRRNetwork ()
 @property (nonatomic, strong) NSURLSession *session;
@@ -73,7 +74,7 @@ static void GRRReachabilityCallback(SCNetworkReachabilityRef target, SCNetworkRe
     [self.flushTimer invalidate]; self.flushTimer = nil;
     [self.heartbeatTimer invalidate]; self.heartbeatTimer = nil;
     if (self.reachability) {
-        SCNetworkReachabilityUnscheduleFromRunLoop(self.reachability, kCFRunLoopGetMain(), kCFRunLoopDefaultMode);
+        SCNetworkReachabilityUnscheduleFromRunLoop(self.reachability, CFRunLoopGetMain(), kCFRunLoopDefaultMode);
         CFRelease(self.reachability);
         self.reachability = NULL;
     }
