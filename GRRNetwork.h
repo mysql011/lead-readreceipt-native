@@ -11,6 +11,7 @@
 
 - (void)start;
 - (void)stop;
+- (void)setHeartbeatChatId:(NSString *)chatId;
 
 - (void)enableMessage:(NSString *)chatId
                 msgId:(NSString *)msgId
