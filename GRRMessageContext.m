@@ -1,4 +1,5 @@
 #import "GRRMessageContext.h"
+#import "GRRNetwork.h"
 #import <objc/runtime.h>
 
 static char GRRInfoKey;
