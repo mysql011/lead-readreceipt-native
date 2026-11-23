@@ -48,6 +48,15 @@ cp deb/DEBIAN/postinst "${STAGE}/DEBIAN/postinst"
 chmod 755 "${STAGE}/DEBIAN/postinst"
 chmod 755 "${STAGE}/Library/MobileSubstrate/DynamicLibraries/"*.dylib
 
+echo "[3.5/5] 去除 dylib 代码签名（让注入工具统一重签）"
+if command -v codesign >/dev/null 2>&1; then
+  for dylib in "${STAGE}/Library/MobileSubstrate/DynamicLibraries/"*.dylib; do
+    codesign --remove-signature "${dylib}" 2>/dev/null || true
+  done
+else
+  echo "[提示] 未找到 codesign，保留 Theos 原签名"
+fi
+
 echo "[4/5] 打包 deb"
 mkdir -p packages
 deb="packages/com.group.readreceipt_1.0.0_iphoneos-arm.deb"
