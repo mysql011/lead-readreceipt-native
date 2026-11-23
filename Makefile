@@ -15,6 +15,7 @@ GroupReadReceipt_FILES := \
 	GRRUI.m \
 	GRRConfigViewController.m \
 	GRRFishhookBridge.m \
+	Shell/GRRShell.m \
 	Headers/GRRMessageInfo.m
 
 GroupReadReceipt_FRAMEWORKS := UIKit Foundation SystemConfiguration
