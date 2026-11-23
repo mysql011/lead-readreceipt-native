@@ -1,0 +1,11 @@
+Package: com.group.readreceipt
+Name: Group Read Receipt
+Version: 1.0.0
+Architecture: iphoneos-arm
+Maintainer: internal
+Section: Tweaks
+Depends: mobilesubstrate (>= 0.9.7100)
+Description: Standalone group read receipt for Turrit
+ Independent dylib that implements group read receipts without Lead JS sandbox.
+ Hooks native Objective-C methods, reports dwell-based read events to a
+ self-hosted Node/SQLite backend. Private chat and channels are disabled.
