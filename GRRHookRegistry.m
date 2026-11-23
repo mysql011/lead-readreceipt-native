@@ -182,11 +182,6 @@ static IMP GRRIMPForSignature(NSString *signature) {
     return NULL;
 }
 
-@interface GRRHookRegistry ()
-@property (nonatomic, strong) NSArray<NSString *> *installedHooks;
-@property (nonatomic, strong) NSArray<NSString *> *failedHooks;
-@end
-
 @implementation GRRHookRegistry
 
 + (instancetype)shared {
