@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <!--
+      钩子声明表。请按真机 class-dump / Frida 结果替换 class 与 selector。
+      signature 必须与宿主方法签名一致：void0/void1/void2/obj0/obj1/obj2，
+      分别代表无参 void、单参 void、双参 void，以及返回对象的 0/1/2 参方法。
+    -->
+    <key>Identity</key>
+    <array>
+        <dict><key>class</key><string>TGUser</string><key>selector</key><string>currentUser</string><key>signature</key><string>obj0</string></dict>
+        <dict><key>class</key><string>TGUser</string><key>selector</key><string>current</string><key>signature</key><string>obj0</string></dict>
+        <dict><key>class</key><string>TGAccount</string><key>selector</key><string>currentAccount</string><key>signature</key><string>obj0</string></dict>
+        <dict><key>class</key><string>TGModernConversationController</string><key>selector</key><string>currentUser</string><key>signature</key><string>obj0</string></dict>
+    </array>
+
+    <key>Render</key>
+    <array>
+        <dict><key>class</key><string>TGMessageViewModel</string><key>selector</key><string>bindView:</string><key>signature</key><string>void1</string></dict>
+        <dict><key>class</key><string>TGMessageCell</string><key>selector</key><string>updateMessage:</string><key>signature</key><string>void1</string></dict>
+        <dict><key>class</key><string>TGMessageBubbleView</string><key>selector</key><string>setMessage:</string><key>signature</key><string>void1</string></dict>
+        <dict><key>class</key><string>TGModernConversationController</string><key>selector</key><string>configureMessageCell:atIndexPath:</string><key>signature</key><string>void2</string></dict>
+        <dict><key>class</key><string>TGConversationController</string><key>selector</key><string>updateCell:forMessage:</string><key>signature</key><string>void2</string></dict>
+    </array>
+
+    <key>LongPress</key>
+    <array>
+        <dict><key>class</key><string>TGModernConversationController</string><key>selector</key><string>messageLongPressed:</string><key>signature</key><string>void1</string></dict>
+        <dict><key>class</key><string>TGConversationController</string><key>selector</key><string>longPressOnMessage:</string><key>signature</key><string>void1</string></dict>
+        <dict><key>class</key><string>TGMessageCell</string><key>selector</key><string>handleLongPress:</string><key>signature</key><string>void1</string></dict>
+        <dict><key>class</key><string>TGMessageBubbleView</string><key>selector</key><string>longPressGestureRecognized:</string><key>signature</key><string>void1</string></dict>
+    </array>
+
+    <key>Menu</key>
+    <array>
+        <dict><key>class</key><string>TGMenuView</string><key>selector</key><string>setItems:</string><key>signature</key><string>void1</string></dict>
+        <dict><key>class</key><string>TGMenuView</string><key>selector</key><string>showForMessage:</string><key>signature</key><string>void1</string></dict>
+        <dict><key>class</key><string>TGContextMenuController</string><key>selector</key><string>showMenuForMessage:</string><key>signature</key><string>void1</string></dict>
+    </array>
+
+    <key>Delete</key>
+    <array>
+        <dict><key>class</key><string>TGModernConversationController</string><key>selector</key><string>deleteMessages:</string><key>signature</key><string>void1</string></dict>
+        <dict><key>class</key><string>TGConversationController</string><key>selector</key><string>deleteMessage:</string><key>signature</key><string>void1</string></dict>
+        <dict><key>class</key><string>TGMessageViewModel</string><key>selector</key><string>deleteMessage</string><key>signature</key><string>void0</string></dict>
+    </array>
+</dict>
+</plist>
