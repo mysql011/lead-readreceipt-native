@@ -19,7 +19,7 @@ GroupReadReceipt_FILES := \
 
 GroupReadReceipt_FRAMEWORKS := UIKit Foundation SystemConfiguration
 GroupReadReceipt_LIBRARIES := substrate
-GroupReadReceipt_CFLAGS := -fobjc-arc -Wno-deprecated-declarations -Wno-objc-msgsend-selector-stub
+GroupReadReceipt_CFLAGS := -fobjc-arc -Wno-deprecated-declarations
 GroupReadReceipt_LDFLAGS := -Wl,-undefined,dynamic_lookup
 
 include $(THEOS_MAKE_PATH)/tweak.mk
